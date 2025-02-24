@@ -1,121 +1,203 @@
+@import url("https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&display=swap");
+
 /* 1. Use a more-intuitive box-sizing model */
-*, *::before, *::after {
-    box-sizing: border-box;
-  }
-  
-  /* 2. Remove default margin */
-  * {
-    margin: 0;
-  }
-  
-  body {
-    /* 3. Add accessible line-height */
-    line-height: 1.5;
-    /* 4. Improve text rendering */
-    -webkit-font-smoothing: antialiased;
-  }
-  
-  /* 5. Improve media defaults */
-  img, picture, video, canvas, svg {
-    display: block;
-    max-width: 100%;
-  }
-  
-  /* 6. Inherit fonts for form controls */
-  input, button, textarea, select {
-    font: inherit;
-  }
-  
-  /* 7. Avoid text overflows */
-  p, h1, h2, h3, h4, h5, h6 {
-    overflow-wrap: break-word;
-  }
-  
-  /* 8. Improve line wrapping */
-  p {
-    text-wrap: pretty;
-  }
-  h1, h2, h3, h4, h5, h6 {
-    text-wrap: balance;
-  }
-  
-  /*
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* 2. Remove default margin */
+* {
+  margin: 0;
+}
+
+body {
+  /* 3. Add accessible line-height */
+  line-height: 1.5;
+  /* 4. Improve text rendering */
+  -webkit-font-smoothing: antialiased;
+}
+
+/* 5. Improve media defaults */
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+/* 6. Inherit fonts for form controls */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+/* 7. Avoid text overflows */
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  overflow-wrap: break-word;
+}
+
+/* 8. Improve line wrapping */
+p {
+  text-wrap: pretty;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  text-wrap: balance;
+}
+
+/*
     9. Create a root stacking context
   */
-  #root, #__next {
-    isolation: isolate;
-  }
+#root,
+#__next {
+  isolation: isolate;
+}
 
-  main{
-    display: flex;
-  }
+body {
+  font-family: "Mulish", serif;
+  font-style: normal;
+  background-color: #ffffff;
+  opacity: 1;
+  background-image: radial-gradient(#0047ff 0.9px, #ffffff 0.9px);
+  background-size: 24px 24px;
+  /* background-image: url('https://img.freepik.com/free-vector/bookshelf-library-interior-with-table-chair-background-illustration-cartoon-librarian-wooden-shelf-school-college-archive-cartoon-graphic-bookstore-furniture-with-desk-lamp-hall_107791-22653.jpg?semt=ais_hybrid'); 
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed; */
+}
 
-  .form-container, .card-container{
-    padding: 20px;
-  }
+/* body::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.8); 
+  z-index: -1; 
+} */
 
-  .form-container{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: first baseline;
-    gap: 8px;
-    width: 300px;
-    min-width: 150px;
-    height: 100vh;
-    border-right: 1px solid black;
-  }
+.main-container {
+  display: flex;
+}
 
-  form > div{
-    margin-bottom: 12px;
-  }
+.form-container,
+.card-container {
+  padding: 40px 20px;
+}
 
-  form label{
-    display: block;
-  }
+.form-container {
+  flex-shrink: 10;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: start;
+  gap: 0px;
+  border-right: 1px solid rgb(0, 0, 0);
+  width: 300px;
+  height: 100vh;
+  position: fixed;
+  left: 0;
+  top: 0;
+  backdrop-filter: blur(3px);
+}
 
-  .radio-selector{
-    display: flex;
-    align-items: center;
-    gap: 4px;
-  }
+form {
+  padding: 0 20px;
+  color: rgb(0, 0, 0);
+}
 
-  .radio-selector input, label{
-    cursor: pointer;
-  }
+form > div {
+  margin-bottom: 12px;
+}
 
-  .add-book{
-    width: 100%;
-    cursor: pointer;
-  }
+form legend {
+  font-size: 26px;
+  margin-bottom: 16px;
+  text-align: center;
+}
 
-  .card{
-    display: flex;
-    flex-direction: column;
-    gap: 4px;
-    max-width: 250px;
-    height: auto;
-    padding: 20px;
-    background-color: red;
-    border-radius: 8px;
-  }
+form label {
+  display: block;
+}
 
-  .statusContainer{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
+.radio-selector {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
 
-  .card p, button{
-    font-size: 18px;
-    font-family: Arial, Helvetica, sans-serif;
-    font-weight: 500;
-  }
+.radio-selector input,
+label {
+  cursor: pointer;
+}
 
-  .card button{
-    font-size: 14px;
-    border-radius: 6px;
-    border: none;
-    padding: 4px 12px;
-  }
+.add-book {
+  width: 100%;
+  cursor: pointer;
+}
+
+.card-container {
+  flex-grow: 1;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 300px));
+  grid-gap: 1rem;
+  margin-left: 300px;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  color: rgb(0, 0, 0);
+  padding: 20px;
+  border-radius: 8px;
+  backdrop-filter: blur(3px);
+  border: 1px solid rgb(90, 90, 90);
+  box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
+}
+
+.statusContainer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.card p{
+  font-size: 18px;
+  font-weight: 500;
+}
+
+.status-Button,.delete-button {
+  border-radius: 4px;
+  cursor: pointer;
+  border: 1px solid black;
+}
+
+.delete-button{
+  font-weight: 600;
+  color: black;
+  background-color: red;
+  padding: 3px 0;
+}
+
+.delete-button:hover{
+  border: none;
+}
 
