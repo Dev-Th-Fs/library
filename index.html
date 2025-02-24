@@ -8,43 +8,46 @@
   </head>
   <body>
     <main>
-      <div class="form-container">
-        <h1>Enter new book</h1>
-        <form>
-          <div>
-            <label for="author">Author</label>
-            <input type="text" id="auhhor" name="author " />
-          </div>
-          <div>
-            <label for="title">Title</label>
-            <input type="text" id="title" name="title " />
-          </div>
-          <div>
-            <label for="pages">Pages</label>
-            <input type="number" id="pages" name="pages " />
-          </div>
-          <div>
-            <label for="status">Status</label>
-            <div class="radio-selector">
-              <input type="radio" id="read" name="status" value="read" />
-              <label for="read">read</label>
+      <div class="main-container">
+        <div class="form-container">
+          <form>
+              <legend>Add new book</legend>
+            <div>
+              <label for="author">Author</label>
+              <input type="text" id="auhhor" name="author " />
             </div>
-            <div class="radio-selector">
-              <input
-                type="radio"
-                id="not-read"
-                name="status"
-                value="not-read"
-              />
-              <label for="not-read">not-read</label>
+            <div>
+              <label for="title">Title</label>
+              <input type="text" id="title" name="title " />
             </div>
-          </div>
-          <div>
-            <button type="submit" class="add-book">Add book</button>
-          </div>
-        </form>
+            <div>
+              <label for="pages">Pages</label>
+              <input type="number" id="pages" name="pages " />
+            </div>
+            <div>
+              <label for="status">Status</label>
+              <div class="radio-selector">
+                <input type="radio" id="read" name="status" value="read" />
+                <label for="read">read</label>
+              </div>
+              <div class="radio-selector">
+                <input
+                  type="radio"
+                  id="not-read"
+                  name="status"
+                  value="not-read"
+                />
+                <label for="not-read">not-read</label>
+              </div>
+            </div>
+            <div>
+              <button type="submit" class="add-book">Add book</button>
+            </div>
+          </form>
+        </div>
+        <div class="card-container"></div>
       </div>
-      <div class="card-container"></div>
+      
     </main>
     <script src="script.js"></script>
   </body>
