@@ -18,8 +18,11 @@ function addBookToLibrary(author, title, pages, status) {
 }
 
 addBookToLibrary("abc", "xyz", 12, "not read");
+addBookToLibrary("qwe", "xyz", 12, "not read");
+addBookToLibrary("rty", "xyz", 12, "not read");
+addBookToLibrary("uio", "xyz", 12, "not read");
 
-function createDomNodes(book) {
+function createDomNodes(book, index) {
   const data = [
     `Author: ${book.author}`,
     `Title: ${book.title}`,
@@ -28,8 +31,15 @@ function createDomNodes(book) {
   ];
   console.table(data);
   const cardContainer = document.createElement("div");
+  const deleteButton = document.createElement("button");
+
   cardContainer.classList.add("card");
-  
+  deleteButton.classList.add("delete-button");
+  deleteButton.textContent = "Delete";
+  deleteButton.addEventListener("click", deleteCard);
+
+  deleteButton.setAttribute("data-index", index);
+
   for (let i = 0; i < 4; i++) {
     if (i == 3) {
       const statusContainer = document.createElement("div");
@@ -37,7 +47,7 @@ function createDomNodes(book) {
       const statusButton = document.createElement("button");
 
       statusContainer.classList.add("statusContainer");
-      statusButton.classList.add("statusButton");
+      statusButton.classList.add("status-Button");
 
       para.textContent = ` ${data[i]}`;
       statusButton.textContent = "X";
@@ -50,13 +60,21 @@ function createDomNodes(book) {
       cardContainer.appendChild(para);
     }
   }
+  cardContainer.appendChild(deleteButton);
   container.appendChild(cardContainer);
 }
 
 function display() {
-  myLibrary.forEach((book) => {
-    createDomNodes(book);
+  myLibrary.forEach((book, index) => {
+    createDomNodes(book, index);
   });
+}
+
+function deleteCard(event) {
+  const index = event.target.getAttribute("data-index");
+  myLibrary.splice(index, 1);
+  container.textContent = "";
+  display();
 }
 
 display();
